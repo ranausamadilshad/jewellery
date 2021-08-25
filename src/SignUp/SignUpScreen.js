@@ -13,6 +13,7 @@ const initialValues = {
   firstname: "",
   lastname: "",
   phone: "",
+  address:""
 };
 
 const validationSchema = Yup.object({
@@ -22,6 +23,7 @@ const validationSchema = Yup.object({
   lastname: Yup.string().required("Required"),
   password: Yup.string().required("Required"),
   phone: Yup.number().required("Required"),
+  address:Yup.string().required("Required")
 });
 
 const onSubmit = (values, submitProps) => {
@@ -116,6 +118,19 @@ const SignUpScreen = () => {
                             type="text"
                             name="password"
                             placeholder="Password"
+                          />
+
+                          {/* <input type="number" placeholder="Mobile"/> */}
+                        </div>
+                        <div className="input_field">
+                          <label>
+                            Password <span>*</span>
+                          </label>
+                          <FormikControl
+                            control="input"
+                            type="text"
+                            name="address"
+                            placeholder="Address"
                           />
 
                           {/* <input type="number" placeholder="Mobile"/> */}
