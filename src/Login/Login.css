@@ -14,7 +14,7 @@
 .login_section h2{
     font-size: 24px;
     color: #000;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@
     width: 100%;
     background-color: #2b2b2b;
     padding: 30px 30px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 .login_section .login_form form .input_field{
 display: flex;
@@ -53,7 +53,7 @@ flex-direction: column;
     display: flex;
     justify-content: center;
     align-items:center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 .login_section .login_form form .submit_btn button{
     color: #fff;
@@ -79,7 +79,7 @@ flex-direction: column;
     .login_form .sign_up_btn{
         display: flex;
         justify-content: center;
-        margin-bottom: 15px;
+        /* margin-bottom: 15px; */
     }
     .login_form .sign_up_btn span{
         color: #fff;
@@ -115,6 +115,13 @@ line-height: 29px;
         color: #f97242;
         cursor: pointer;
     }
+    .form-control {
+        margin-bottom: 20px;
+      }
+      
+      .error {
+        color: red;
+      }
 /*RESPONSIVE*/
 
 /*Tablet*/

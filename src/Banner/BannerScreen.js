@@ -19,7 +19,7 @@ const BannerScreen = () => {
         <div className="carousel-caption slider_2_text">
             <h2 className="slide-1">Designer Jewellery</h2>
             <span>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,<br/>lorem quis bibendum auctor elit </span>
-            <Link to="/shopnow" className="m-t-20">Shop Now</Link>
+            <Link to="/shop" className="m-t-20">Shop Now</Link>
           </div>
       </div>
      
@@ -28,7 +28,7 @@ const BannerScreen = () => {
         <div className="carousel-caption slider_2_text">
             <h2 className="slide-1">Designer Jewellery</h2>
             <span>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,<br/>lorem quis bibendum auctor elit </span>
-            <Link to="/shopnow" className="m-t-20">Shop Now</Link>
+            <Link to="/shop" className="m-t-20">Shop Now</Link>
           </div>
       </div>
       
@@ -37,7 +37,7 @@ const BannerScreen = () => {
         <div className="carousel-caption slider_2_text">
             <h2 className="slide-1">Designer Jewellery</h2>
            <span>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,<br/>lorem quis bibendum auctor elit </span>
-            <Link to="/shopnow" className="m-t-20">Shop Now</Link>
+            <Link to="/shop" className="m-t-20">Shop Now</Link>
           </div>
       </div>
       

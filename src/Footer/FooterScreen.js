@@ -35,10 +35,10 @@ const FooterScreen = () => {
                 <h4 className="footer-head-line">Information</h4>
                 <ul className="footer-box2 pad-top15">
                     <li><Link to="/aboutus">About Us</Link></li>
-                    <li><Link to="/customer">Customer Service</Link></li>
-                    <li><Link to="/privacypolicy">Privacy Policy</Link></li>
-                    <li><Link to="/sitemap">Site Map</Link></li>
-                    <li><Link to="/ad">Advanced Search</Link></li>
+                    {/* <li><Link to="/customer">Customer Service</Link></li> */}
+                    <li><Link to="/readme">Privacy Policy</Link></li>
+                    {/* <li><Link to="/sitemap">Site Map</Link></li> */}
+                    <li><Link to="/">Advanced Search</Link></li>
                     <li><Link to="/contactus">Contact Us</Link></li>
                 </ul>
             </div>
@@ -46,11 +46,11 @@ const FooterScreen = () => {
             <div className="footer-section2">
                 <h4 className="footer-head-line">My Account</h4>
                 <ul className="footer-box2 pad-top15">
-                    <li><Link to="/signin">Sign In</Link></li>
+                    <li><Link to="/login">Sign In</Link></li>
                     <li><Link to="/mycart">View Cart</Link></li>
                     <li><Link to="/wishlist">My Wishlist</Link></li>
-                    <li><Link to="/privacypolicy">Private Policy</Link></li>
-                    <li><Link to="/help">Help</Link></li>
+                    <li><Link to="/readme">Private Policy</Link></li>
+                    <li><Link to="/contactus">Help</Link></li>
                 </ul>
             </div>
             <div className="footer-section1">

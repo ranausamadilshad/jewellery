@@ -9,7 +9,9 @@ import MyAccountPage from './Pages/MyAccountPage';
 import WishListPage from './Pages/WishListPage';
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import MyCartPage from './Pages/MyCartPage';
-
+import SingleProductPage from './Pages/SingleProductPage';
+import ReadMePage from './Pages/ReadMePage';
+import Admin from './Pages/Admin';
 
 function App() {
   return (
@@ -19,6 +21,15 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/singleproduct">
+            <SingleProductPage/>
+          </Route>
+          <Route path="/admin">
+            <Admin/>
+          </Route>
+          <Route  path="/readme">
+            <ReadMePage/>
           </Route>
           <Route path="/shop">
             <Shop />

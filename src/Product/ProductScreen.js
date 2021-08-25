@@ -1,8 +1,19 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Product.css';
 import products1 from '../Images/Products1.png';
+import {Link} from 'react-router-dom';
 
 const ProductScreen = () => {
+    const [products] = useState([
+        {id:1,name:'Dslr',price:400, Image:products1},
+        {id:2,name:'Microphone',price:35, Image:products1},
+        {id:3,name:'Headphone',price:220, Image:products1},
+        {id:4,name:'FancyShoes',price:70, Image:products1},
+        {id:5,name:'Rings',price:80, Image:products1},
+        {id:6,name:'Watch',price:250, Image:products1},
+        {id:7,name:'Iphone',price:150, Image:products1},
+        {id:8,name:'Perfume',price:20, Image:products1},
+    ]);
     return (
         <>
         
@@ -20,20 +31,21 @@ const ProductScreen = () => {
         consectetueradipiscing elit, sed diam nonummy nibh</p>
       </div>
       <div className="product_grid">
+      {products.map((product)=>(
         <div className="product_card">
-           <a href="#"> 
+           <Link to="/singleproduct"> 
            <div className="figure">
-            <img src={products1}/>
+            <img src={product.Image}/>
            </div>
            <div className="product_detail">
-            <h5>High Designer Jewellery</h5>
+            <h5>{product.name}</h5>
              <span><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></span>
-             <p>100.00$</p>
+             <p>{product.price}</p>
             </div>
-            </a>  
+            </Link>  
         </div>
-  
-        <div className="product_card">
+   ) )}
+        {/* <div className="product_card">
             <a href="#"> 
             <div className="figure">
              <img src={products1}/>
@@ -120,7 +132,7 @@ const ProductScreen = () => {
              </div>
              </a>  
          </div>
-  
+   */}
         
       </div>
     </div>

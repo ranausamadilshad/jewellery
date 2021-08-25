@@ -1,9 +1,15 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Categories.css';
-import products from '../Images/Products1.png';
+import products1 from '../Images/Products1.png';
 import {Link} from 'react-router-dom';
 
 const CategoriesScreen = () => {
+    const [products] = useState([
+        {id:1,name:'Necklaces And Rings',price:400, Image:products1,description:'Lorem Ipsum is a dummy text that is mainly used by.'},
+        {id:2,name:'Necklaces And Rings',price:35, Image:products1,description:'Lorem Ipsum is a dummy text that is mainly used by.'},
+        {id:3,name:'Necklaces And Rings',price:220, Image:products1,description:'Lorem Ipsum is a dummy text that is mainly used by.'},
+        {id:4,name:'Necklaces And Rings',price:70, Image:products1,description:'Lorem Ipsum is a dummy text that is mainly used by.'},
+    ]);
     return (
         <>
           
@@ -21,72 +27,26 @@ const CategoriesScreen = () => {
       </div>
       <div className="product_grid">
        
-        <div className="product_card our_categories">
-            <a >
-                    <div className="figure">
-                        <img src={products} alt="Categories" />
-                       </div>
-                       <div className="single_category_detail">
-                        <h5>Necklaces And Rings</h5>                      
-                         <p>View the Collection</p>
-                        </div>    
-             </a>  
-             <div className="our_category_hover">
-                <h4>Necklaces And Rings</h4>
-                <p>Lorem Ipsum is a dummy text that is mainly used by.</p>
-                <a href="#">View Shop</a>
-            </div>
-         </div>
-  
+        
+ {products.map((product)=>(
          <div className="product_card our_categories">
             <a >
                     <div className="figure">
-                        <img src={products} alt="Categories" />
+                        <img src={product.Image} alt="Categories" />
                        </div>
                        <div className="single_category_detail">
-                        <h5>Necklaces And Rings</h5>                      
+                        <h5>{product.name}</h5>                      
                          <p>View the Collection</p>
                         </div>    
              </a>  
              <div className="our_category_hover">
-                <h4>Necklaces And Rings</h4>
-                <p>Lorem Ipsum is a dummy text that is mainly used by.</p>
-                <Link to="/viewshop">View Shop</Link>
+                <h4>{product.name}</h4>
+                <p>{product.description}</p>
+                <Link to="/shop">View Shop</Link>
             </div>
          </div>
-         <div className="product_card our_categories">
-            <a >
-                    <div className="figure">
-                        <img src={products} alt="Categories" />
-                       </div>
-                       <div className="single_category_detail">
-                        <h5>Necklaces And Rings</h5>                      
-                         <p>View the Collection</p>
-                        </div>    
-             </a>  
-             <div className="our_category_hover">
-                <h4>Necklaces And Rings</h4>
-                <p>Lorem Ipsum is a dummy text that is mainly used by.</p>
-                <Link to="/viewshop">View Shop</Link>
-            </div>
-         </div>
-         <div className="product_card our_categories">
-            <a >
-                    <div className="figure">
-                        <img src={products} alt="Categories" />
-                       </div>
-                       <div className="single_category_detail">
-                        <h5>Necklaces And Rings</h5>                      
-                         <p>View the Collection</p>
-                        </div>    
-             </a>  
-             <div className="our_category_hover">
-                <h4>Necklaces And Rings</h4>
-                <p>Lorem Ipsum is a dummy text that is mainly used by.</p>
-                <a href="#">View Shop</a>
-            </div>
-         </div>
-
+          ) )}
+        
       </div>
     </div>
   </section>   

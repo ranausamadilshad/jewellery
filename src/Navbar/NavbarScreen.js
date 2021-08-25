@@ -20,8 +20,10 @@ const NavbarScreen = () => {
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/shop">Shop</Link></li>
                         <li><Link to="/mycart">My Cart</Link></li>
+                        <li><Link to="/wishlist">Wishlist</Link></li>
                         <li><Link to="/aboutus">About Us</Link></li>
                         <li><Link to="contactus">Contact us</Link></li>
+                       
                     </ul>
                 </div>
                 <div className="call_us">
@@ -32,14 +34,14 @@ const NavbarScreen = () => {
                         </Link>  
                     </span>
                     <span className="account_btn_hover">
-                        <Link to="#" className="account_icon"><i className="fas fa-user-friends"></i></Link>
+                        <Link to="#jddj" className="account_icon"><i className="fas fa-user-friends"></i></Link>
                       <div className="account_btn">
                          <Link to="/wishlist">My Wishlist</Link>
                          <Link to="/login">Sign in</Link>
                          <Link to="/myaccount">My Account</Link>
                       </div>  
                     </span>
-                    <span><Link to="cart.html"><i className="fas fa-shopping-cart"></i></Link></span>
+                    <span><Link to="/mycart"><i className="fas fa-shopping-cart"></i></Link></span>
                     
                 </div>
             </div>
@@ -73,6 +75,7 @@ const NavbarScreen = () => {
             <li><Link to="/home">Home</Link></li>
             <li><Link to="/shop">Shop</Link></li>
             <li><Link to="/mycart">My Cart</Link></li>
+            <li><Link to="/wishlist">My Wishlist</Link></li>
             <li><Link to="/aboutus">About Us</Link></li>
             <li><Link to="/contactus">Contact us</Link></li>
         </ul>

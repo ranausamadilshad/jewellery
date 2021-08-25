@@ -7,7 +7,7 @@
      .sign_up_section .signup_form form label{
     display: block;
 width: 100%;
-margin-bottom: 4px;
+/* margin-bottom: 4px; */
 color: #fff;
 }
 .sign_up_section .signup_form form label span{
@@ -17,12 +17,12 @@ color: #fff;
     float: left;
     width: 100%;
     margin-top: 40px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 .sign_up_section h2{
     font-size: 24px;
     color: #000;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@ color: #fff;
     width: 100%;
     background-color: #2b2b2b;
     padding: 30px 30px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 .sign_up_section .signup_form form .business_input_field{
 float: left;
@@ -52,7 +52,7 @@ background-clip: padding-box;
 border: 1px solid #ced4da;
 border-radius: 0.25rem;
 transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
- margin-bottom: 20px;
+ /* margin-bottom: 20px; */
  outline: none;
 }
 .sign_up_section .signup_form form .signup_input_field{
@@ -60,7 +60,7 @@ display: grid;
 grid-template-columns: auto auto;
 gap: 6px 30px;
 width: 100%;
-margin-bottom: 7px;
+/* margin-bottom: 7px; */
 }
 .sign_up_section .signup_form form .signup_input_field input{
 
@@ -73,7 +73,7 @@ margin-bottom: 7px;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-     margin-bottom: 20px;
+     /* margin-bottom: 20px; */
      outline: none;
      width: 100%;
 }
@@ -86,7 +86,7 @@ margin-bottom: 7px;
     display: flex;
     justify-content: center;
     align-items:center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     width: 100%;
 }
 .sign_up_section .signup_form form .submit_btn button{
@@ -113,12 +113,12 @@ margin-bottom: 7px;
     .sign_up_section .signup_form form .captcha_box{
         float: left;
         width: 100%;
-        margin-bottom: 25px;
+        /* margin-bottom: 25px; */
         }
     .signup_form .sign_up_btn{
         display: flex;
         justify-content: center;
-        margin-bottom: 15px;
+        /* margin-bottom: 15px; */
         border-bottom: 1px solid #f97242;
         padding-bottom: 19px;
         width: 100%;
@@ -148,6 +148,13 @@ margin: 0px;
         color: #f97242;
         cursor: pointer;
     }
+    .form-control {
+        margin-bottom: 20px;
+      }
+      
+      .error {
+        color: red;
+      }
 /*RESPONSIVE*/
 
 /*Tablet*/
