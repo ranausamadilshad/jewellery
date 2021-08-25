@@ -124,7 +124,7 @@ const SignUpScreen = () => {
                         </div>
                         <div className="input_field">
                           <label>
-                            Password <span>*</span>
+                            Address<span>*</span>
                           </label>
                           <FormikControl
                             control="input"
