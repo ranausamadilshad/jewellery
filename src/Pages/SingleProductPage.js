@@ -9,7 +9,7 @@ const SingleProductPage = () => {
     return (
         <>
            <Navbar/>
-         <CustomBanner/>
+         <CustomBanner pname="Single Product"/>
            <SingleProduct/>
            <PopularProducts/>
           < Footer/>
