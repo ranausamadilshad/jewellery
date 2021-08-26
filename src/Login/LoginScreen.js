@@ -7,6 +7,9 @@ import {
     Form,
   } from 'formik'
 import * as Yup from 'yup';
+import { useHistory } from "react-router-dom";
+import useApi from '../hooks/useApi';
+import * as api from "../api/Api";
 
 
 const initialValues = {
@@ -22,15 +25,31 @@ const initialValues = {
   })
 
   
-  const onSubmit = (values, submitProps) => {
-    console.log('Form data', values)
-    submitProps.setSubmitting(false)
-  }
+  // const onSubmit = (values, submitProps) => {
+  //   console.log('Form data', values)
+  //   submitProps.setSubmitting(false)
+  // }
+
+
+
+
+
 
 const LoginScreen = () => {
+  const history = useHistory();
+  const { error, request } = useApi(api.loginUser);
 
+  async function onSubmit(values,submitProps) {
+    console.log("form", values);
+    try {
+      const { data } = await request({ ...values });
+      localStorage.setItem("token", data.token);
+      history.push("/");
+    } catch (_) {}
+  }
+  console.log("error", error);
 
-
+  
 
     return (
         <>

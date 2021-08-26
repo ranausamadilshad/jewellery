@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Navbar.css';
 import logo from '../Images/menu-logo.png';
 import {Link} from 'react-router-dom';
 
 const NavbarScreen = () => {
+ const [state, setstate] = useState("");
     return (
       <>  
 <header>
@@ -13,7 +14,9 @@ const NavbarScreen = () => {
                 <Link to="/"><img src={logo} alt="alt"/></Link>
                 </div>
                 <button className="nav_btn open_close_nav" type="button">
-                      <i className="fas fa-bars"></i>
+                      <i className="fas fa-bars" onClick={()=>{
+                          setstate("responsive_bar")
+                      }}></i>
                   </button>
                 <div className="nav_bar">
                     <ul>
@@ -34,7 +37,7 @@ const NavbarScreen = () => {
                         </Link>  
                     </span>
                     <span className="account_btn_hover">
-                        <Link to="#jddj" className="account_icon"><i className="fas fa-user-friends"></i></Link>
+                        <Link to="/mycart" className="account_icon"><i className="fas fa-user-friends"></i></Link>
                       <div className="account_btn">
                          <Link to="/wishlist">My Wishlist</Link>
                          <Link to="/login">Sign in</Link>
@@ -48,8 +51,8 @@ const NavbarScreen = () => {
         </div>
     </header> 
 
-<section className="responsive_nav_bar">
-    <div className="cancle_nav"><Link className="open_close_nav"><i className="fas fa-times"></i></Link></div>
+<section className= {`responsive_nav_bar ${state}`}>
+    <div className="cancle_nav"><Link className="open_close_nav" onClick={()=>{setstate("")}}><i className="fas fa-times"></i></Link></div>
     <div className="responsive_call_us">
         {/* <span><i className="fas fa-phone-volume"></i></span>
         <small>Call Now:</small>
@@ -61,7 +64,7 @@ const NavbarScreen = () => {
             </Link>  
         </span>
         <span className="account_btn_hover">
-            <Link to="#" className="account_icon"><i className="fas fa-user-friends"></i></Link>
+            <Link to="/mycart" className="account_icon"><i className="fas fa-user-friends"></i></Link>
           <div className="account_btn">
              <Link to="/wishlist">My Wishlist</Link>
              <Link to="/login">Sign in</Link>

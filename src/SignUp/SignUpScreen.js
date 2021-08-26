@@ -5,6 +5,9 @@ import FormikControl from "./FormikControl";
 import TextError from "./TextError";
 import { ErrorMessage, Formik, Form } from "formik";
 import * as Yup from "yup";
+import { useHistory } from "react-router-dom";
+import useApi from '../hooks/useApi';
+import * as api from "../api/Api";
 
 const initialValues = {
   businessname: "",
@@ -26,12 +29,30 @@ const validationSchema = Yup.object({
   address:Yup.string().required("Required")
 });
 
-const onSubmit = (values, submitProps) => {
-  console.log("Form data", values);
-  submitProps.setSubmitting(false);
-};
+// const onSubmit = (values, submitProps) => {
+//   console.log("Form data", values);
+//   submitProps.setSubmitting(false);
+// };
 
 const SignUpScreen = () => {
+
+  const history = useHistory();
+  const { error, request } = useApi(api.signup);
+
+  async function onSubmit(values,submitProps) {
+    console.log("form", values);
+    submitProps.setSubmitting(false);
+    try {
+      const { data } = await request({ ...values });
+      localStorage.setItem("token", data.token);
+      history.push("/");
+    } catch (_) {}
+  }
+  console.log("error", error);
+
+
+
+
   return (
     <>
       <Formik
