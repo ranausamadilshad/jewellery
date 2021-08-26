@@ -1,9 +1,19 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './Product.css';
 import products1 from '../Images/Products1.png';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
+import useApi from '../hooks/useApi';
+import * as api from "../api/Api";
+
 
 const ProductScreen = () => {
+
+    const getProducts = useApi(api.getProducts);
+    const [, setValues] = useState();
+
+
     const [products] = useState([
         {id:1,name:'Dslr',price:400, Image:products1},
         {id:2,name:'Microphone',price:35, Image:products1},
@@ -14,6 +24,22 @@ const ProductScreen = () => {
         {id:7,name:'Iphone',price:150, Image:products1},
         {id:8,name:'Perfume',price:20, Image:products1},
     ]);
+
+    useEffect(() => {
+        async function fetchData() {
+          try {
+            const { data } = await getProducts.request();
+            data && console.log("get ", data);
+            setValues(data);
+          } catch (_) {}
+        }
+        fetchData();
+        //eslint-disable-next-line
+      }, []);
+
+
+
+
     return (
         <>
         
@@ -33,7 +59,7 @@ const ProductScreen = () => {
       <div className="product_grid">
       {products.map((product)=>(
         <div className="product_card">
-           <Link to="/singleproduct"> 
+           <Link to="/singleproduct" > 
            <div className="figure">
             <img src={product.Image}/>
            </div>
@@ -45,95 +71,6 @@ const ProductScreen = () => {
             </Link>  
         </div>
    ) )}
-        {/* <div className="product_card">
-            <a href="#"> 
-            <div className="figure">
-             <img src={products1}/>
-            </div>
-            <div className="product_detail">
-             <h5>High Designer Jewellery</h5>
-              <span><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></span>
-              <p>100.00$</p>
-             </div>
-             </a>  
-         </div>
-  
-         <div className="product_card">
-            <a href="#"> 
-            <div className="figure">
-             <img src={products1}/>
-            </div>
-            <div className="product_detail">
-             <h5>High Designer Jewellery</h5>
-              <span><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></span>
-              <p>100.00$</p>
-             </div>
-             </a>  
-         </div>
-         <div className="product_card">
-            <a href="#"> 
-            <div className="figure">
-             <img src={products1}/>
-            </div>
-            <div className="product_detail">
-             <h5>High Designer Jewellery</h5>
-              <span><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></span>
-              <p>100.00$</p>
-             </div>
-             </a>  
-         </div>
-  
-         <div className="product_card">
-            <a href="#"> 
-            <div className="figure">
-             <img src={products1}/>
-            </div>
-            <div className="product_detail">
-             <h5>High Designer Jewellery</h5>
-              <span><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></span>
-              <p>100.00$</p>
-             </div>
-             </a>  
-         </div>
-         <div className="product_card">
-            <a href="#"> 
-            <div className="figure">
-             <img src={products1}/>
-            </div>
-            <div className="product_detail">
-             <h5>High Designer Jewellery</h5>
-              <span><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></span>
-              <p>100.00$</p>
-             </div>
-             </a>  
-         </div>
-  
-         <div className="product_card">
-            <a href="#"> 
-            <div className="figure">
-             <img src={products1}/>
-            </div>
-            <div className="product_detail">
-             <h5>High Designer Jewellery</h5>
-              <span><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></span>
-              <p>100.00$</p>
-             </div>
-             </a>  
-         </div>
-         <div className="product_card">
-            <a href="#"> 
-            <div className="figure">
-             <img src={products1}/>
-            </div>
-            <div className="product_detail">
-             <h5>High Designer Jewellery</h5>
-              <span><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></span>
-              <p>100.00$</p>
-             </div>
-             </a>  
-         </div>
-   */}
-        
       </div>
     </div>
   </section> 

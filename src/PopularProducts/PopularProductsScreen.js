@@ -1,14 +1,39 @@
-import React ,{useState} from 'react'
+import React ,{useState,useEffect} from 'react'
 import products1 from '../Images/Products1.png';
 import {Link} from 'react-router-dom';
+// import { useHistory } from "react-router-dom";
+import useApi from '../hooks/useApi';
+import * as api from "../api/Api";
+
 
 const PopularProductsScreen = (props) => {
+
+  const popularProducts = useApi(api.popularProducts);
+  const [, setValues] = useState();
+
   const [products] = useState([
     {id:1,name:'Dslr',price:400, Image:products1},
     {id:2,name:'Microphone',price:35, Image:products1},
     {id:3,name:'Headphone',price:220, Image:products1},
     {id:4,name:'FancyShoes',price:70, Image:products1},
 ]);
+
+
+useEffect(() => {
+  async function fetchData() {
+    try {
+      const { data } = await popularProducts.request();
+      data && console.log("get ", data);
+      setValues(data);
+    } catch (_) {}
+  }
+  fetchData();
+  //eslint-disable-next-line
+}, []);
+
+
+
+
     return (
         <>
          

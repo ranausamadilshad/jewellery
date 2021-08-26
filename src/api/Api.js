@@ -20,6 +20,19 @@ export function signupEmail(data) {
   return api.patch(`/user/register2`, { ...data });
 }
 
+export function getProducts(data) {
+  return api.get(`/user/products`, { ...data });
+}
+
+export function popularProducts(data) {
+  return api.get(`/user/pproducts`, { ...data });
+}
+
+export function specialProducts(data) {
+  return api.get(`/user/sproducts`, { ...data });
+}
+
+
 // export function addJournal(data) {
 //   return api.post(`/journal/add`, { ...data }, config);
 // }
